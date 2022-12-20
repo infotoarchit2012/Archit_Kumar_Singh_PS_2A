@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+double findMean(int a[],int n)
+{
+	int sum=0;
+	for(int i=0;i<n;i++)
+		{
+			sum=sum+a[i];
+		}
+	return (double)sum/(double)n;
+}
+double findMedian(int a[],int n)
+{
+	if(n%2!=0)
+	{
+		return(double)a[n/2];
+	}
+	return (double)(a[(n-1)/2]+a[n/2])/2.0;
+}
+int main()
+{
+	int i,n,a[100];
+	cout<<"Enter the number of the terms in the array\n";
+	cin>>n;
+	cout<<"Enter the terms in the array\n";
+	for(i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	int N=sizeof(a)/sizeof(a[0]);
+	cout<<"Mean = "<<findMean(a,N)<<endl;
+	cout<<"Median = "<<findMedian(a,N)<<endl;
+	return 0;
+}
